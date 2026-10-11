@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Europe's youth systems | Aniket Padwekar</title>
+<meta name="description" content="Which countries grow Europe's elite footballers, and where do those players learn the game? An interactive analysis of 500 elite players.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Oswald:wght@500;600&display=swap">
+<link rel="stylesheet" href="../../assets/style.css"></head>
+<body><div class="wrap">
+<header class="site"><a class="brand" href="../../">Aniket Padwekar</a><nav><a href="../../#projects">All projects</a></nav></header>
+<div class="hero"><p class="eyebrow">Football data project</p>
+<h1>Europe's youth systems</h1>
+<p class="lead">Which countries grow the most elite footballers, and where do those players learn the game? Explore 500 elite players across ten seasons, by nation, club and age.</p></div>
+
+<div class="banner"><span><b>Data last updated <span id="updated">9 October 2026</span>.</b> This is a one-time snapshot, not a live feed: match ratings run through the 2025/26 season and squad lists through the 2026 World Cup. Player photos load live from Wikimedia Commons.</span></div>
+
+<section style="padding-top:28px">
+<div class="controls"><label>Highlight a nation <select id="hl" aria-label="Highlight a nation"></select></label><label><input type="checkbox" id="pins" checked> Show youth clubs on the map</label></div>
+<div class="kpis" id="kpis"></div></section>
+
+<section class="panel"><h2>Map</h2>
+<p class="note">Countries are shaded by the measure you choose. The United Kingdom is one shape on this map and carries England's figures. Nations outside Europe appear in the ranking below.</p>
+<div class="seggroup" id="sw1"></div><div id="map"></div><div class="maplegend" id="maplegend"></div></section>
+
+<div class="two">
+<section class="panel"><h2 id="rankhead">Ranking</h2><p class="note" id="ranknote"></p><div class="seggroup" id="sw2"></div><div id="rank"></div></section>
+<section class="panel"><h2>Trained minus nationals</h2><p class="note">Players trained in a country minus players of that nationality. Blue: the country trains more talent than it keeps. Gold: it keeps more than it trains.</p><div id="net"></div></section>
+</div>
+
+<section class="panel"><h2>Cohorts</h2><p class="note">Share of each birth cohort's elite players whose first youth team was that nation. The 2000-onward cohort is still young, which cuts every nation's count.</p><div class="chart" id="coh"></div></section>
+
+<div class="two">
+<section class="panel"><h2>Elite by age 23</h2><p class="note">Players reaching the top-100 rating tier of a league season at or before age 23. The six largest nations.</p><div class="chart" id="e23"></div></section>
+<section class="panel"><h2>Elite by age 21</h2><p class="note">The same measure at age 21. Counts are small, so read the direction.</p><div class="chart" id="e21"></div></section>
+</div>
+
+<div class="two">
+<section class="panel"><h2>Squad age</h2><p class="note">Mean age of national squads on opening day of each World Cup and Euro. Dashed: average of all squads.</p><div class="chart" id="age"></div></section>
+<section class="panel"><h2>Under-23 share</h2><p class="note">Share of each squad aged under 23 on opening day.</p><div class="chart" id="u23"></div></section>
+</div>
+
+<section class="panel"><h2>Hit rate</h2><p class="note">Everyone in a U17, U19 or U21 European Championship squad, born 1993 to 2002, matched against the elite sample. Only nations with at least 60 squad players.</p>
+<div class="tw"><table id="hit"><thead><tr><th>Nation</th><th>Squad players</th><th>Became elite</th><th>Hit rate</th><th>Born 1993-97</th><th>Born 1998-2002</th></tr></thead><tbody></tbody></table></div></section>
+
+<section class="panel"><h2>Player cards</h2><p class="note">Search the sample or pick a player. The nation filter above also narrows the list.</p>
+<input type="search" id="psearch" placeholder="Search a player" aria-label="Search a player"><div class="pgrid" id="pgrid"></div><p class="note" id="pcount" style="margin-top:12px"></p></section>
+
+<section class="panel"><h2>How to read this</h2>
+<ul class="plain"><li><b>Sample.</b> 500 players ranked by average Sofascore match rating across the big five leagues and the Champions League, 2016/17 to 2025/26. It measures elite output, not a hit rate for every child who entered a system, except in the youth-Euro table.</li>
+<li><b>Trained in.</b> Country of the youth club a player was at by age 15, from Wikipedia youth-career lists (448 of 500 players placed). <b>First youth team</b> and <b>final nation</b> come from Wikidata.</li>
+<li><b>Uncertainty.</b> Counts are small for most nations. Differences between nations close together are within noise; larger gaps hold up when the players are resampled.</li>
+<li><b>Not covered.</b> Ratings favor some positions, youth lists are incomplete, and academy regions inside a country are not available.</li>
+<li><b>Sources.</b> Sofascore, Wikidata, Wikipedia, FotMob (market values), Wikimedia Commons (photos).</li></ul></section>
+
+<footer>Built by Aniket Padwekar. <a href="../../">Back to all projects</a></footer>
+</div>
+<dialog id="card" aria-labelledby="cardname"><button type="button" class="cx" id="cclose" aria-label="Close">&times;</button><div id="cardbody"></div></dialog>
+<script src="data.js"></script><script src="flags.js"></script><script src="app.js"></script>
+</body></html>

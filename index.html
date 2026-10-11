@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Aniket Padwekar | Football data projects</title>
+<meta name="description" content="Football data projects: dashboards, models and analyses built end to end.">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Oswald:wght@500;600&display=swap">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<div class="wrap">
+  <header class="site">
+    <a class="brand" href="./">Aniket Padwekar</a>
+    <nav><a href="#projects">Projects</a><a href="#about">About</a><a href="https://github.com/Aniket-Padwekar">GitHub</a></nav>
+  </header>
+  <div class="hero">
+    <p class="eyebrow">Football data projects</p>
+    <h1>Football questions, answered with data</h1>
+    <p class="lead">I build dashboards, models and analyses on football data, from collecting the data to publishing the result. Every project here is open and rebuilt as the data changes.</p>
+  </div>
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="grid" id="grid"></div>
+  </section>
+  <section id="about">
+    <h2>About</h2>
+    <p class="lead" style="margin-top:0">I am based in Berlin and work in operations and project management, where I automate processes and coordinate across teams. I bring the same approach to football: a clear question, a pipeline that refreshes itself, and results anyone can read.</p>
+  </section>
+  <footer>Built by Aniket Padwekar. Data from public sources; see each project for details.</footer>
+</div>
+<script src="assets/projects.js"></script>
+<script>
+(function () {
+  var g = document.getElementById('grid');
+  (window.PROJECTS || []).forEach(function (p) {
+    var a = document.createElement('a'); a.className = 'card'; a.href = p.href;
+    if (p.external) { a.target = '_blank'; a.rel = 'noopener'; }
+    var s = document.createElement('span'); s.className = 'status'; s.textContent = p.status || ''; a.appendChild(s);
+    var h = document.createElement('h3'); h.textContent = p.title; a.appendChild(h);
+    var b = document.createElement('p'); b.textContent = p.blurb; a.appendChild(b);
+    var t = document.createElement('div'); t.className = 'tags';
+    (p.tags || []).forEach(function (x) { var e = document.createElement('span'); e.className = 'tag'; e.textContent = x; t.appendChild(e); });
+    a.appendChild(t);
+    var c = document.createElement('span'); c.className = 'cta'; c.textContent = (p.cta || 'Open') + ' →'; a.appendChild(c);
+    g.appendChild(a);
+  });
+})();
+</script>
+</body>
+</html>
