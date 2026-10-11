@@ -8,7 +8,7 @@ Static site for GitHub Pages. No build step.
 
 ## Add a project
 1. Open `assets/projects.js` and add one object at the top of the list (title, status, blurb, tags, href, cta).
-2. If the project has its own page, create `projects/<name>/index.html` (copy `projects/youth-systems/index.html` as a start).
+2. For a project with its own dashboard, publish it as a separate repository (as with the 2. Bundesliga tracker) and set `href` to its GitHub Pages address with `external: true`, so it opens in a new tab.
 3. Commit and push. The home page card appears automatically.
 
 ## To check before publishing
